@@ -1,4 +1,4 @@
-auth_token = "OTM1ODY0NTg2NDM4MDU4MDY1.YfE10A.D5jeA1eL1Y6ynv2DipoCcu7sOtg"
+
 # bot.py
 import os
 import random
@@ -6,9 +6,10 @@ import discord
 from mcstatus import MinecraftServer
 # 1
 from discord.ext import commands
-from ping_server import server_lookup
+my_secret = os.environ['TOKEN']
 
-TOKEN = auth_token
+TOKEN = my_secret
+#TOKEN = os.getenv('my_secret')
 
 # 2
 bot = commands.Bot(command_prefix='s!')
