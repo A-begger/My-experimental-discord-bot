@@ -24,10 +24,11 @@ bot = commands.Bot(command_prefix='-')
 async def on_ready():
     # this is executed when the bot is ready to run
     print(f'{bot.user.name} has connected to Discord!')
+default_ip="inthessmokes.aternos.me" #Sets the default ip as a global variable
 @bot.command(name='status')
 # is a command, does this if status
-async def server_lookup(ctx):
-    server = MinecraftServer.lookup("inthessmokes.aternos.me")
+async def server_lookup(ctx,default_ip="inthessmokes.aternos.me"):
+    server = MinecraftServer.lookup(default_ip)
     
     # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
     status = server.status()
