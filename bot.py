@@ -28,13 +28,14 @@ async def on_ready():
 # is a command, does this if status
 async def server_lookup(ctx):
     server = MinecraftServer.lookup("inthessmokes.aternos.me")
+    
     # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
     status = server.status()
     if status.players.online == 0:
         offline = (f"The server is offline")
         response = offline
     else:
-        online = (f"The server is online and has",{status.players.online},"players online")
+        online = (f"The server is online and has {status.players.online} player(s) online")
         response = online
     await ctx.send(response)
 @bot.command(name='ping') #ping pong
