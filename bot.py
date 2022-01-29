@@ -12,7 +12,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 # imports os, discord and .env
-TOKEN = os.getenv('auth')
+secret = os.getenv('auth')
+TOKEN = secret
+
 # fetches the token from the .env
 
 # 2
