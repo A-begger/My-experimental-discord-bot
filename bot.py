@@ -1,6 +1,7 @@
 # bot.py
 import os
 import random
+from urllib import response
 import discord
 from mcstatus import MinecraftServer
 
@@ -38,6 +39,14 @@ async def server_lookup(ctx):
 async def pong(ctx):
   response = "pong!"
   await ctx.send(response)
-
+""" If querying is enabled then this will query the server.
+@bot.command(name='query')
+async def info(ctx):
+    server = MinecraftServer.lookup("inthessmokes.aternos.me")
+    query = server.query()
+    num_online=(f"The server has the following players online: {', '.join(query.players.names)}")
+    response = num_online
+    await ctx.send(response)
+"""
 bot.run(TOKEN)
 # runs the bot with the token
