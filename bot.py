@@ -4,11 +4,11 @@ import random
 from urllib import response
 import discord
 from mcstatus import MinecraftServer
+from discord.ext import commands
+from dotenv import load_dotenv
 
 # 1
-from discord.ext import commands
 
-from dotenv import load_dotenv
 
 load_dotenv()
 # imports os, discord and .env
@@ -41,7 +41,11 @@ async def server_lookup(ctx,default_ip="inthessmokes.aternos.me"):
     await ctx.send(response)
 @bot.command(name='ping') #ping pong
 async def pong(ctx):
-  response = "pong!"
+  rand_num = random.randint(1,13756)
+  if rand_num == 1: 
+        response = "Smokes sucks"
+  else:
+      response = "Pong!"  
   await ctx.send(response)
 """ If querying is enabled then this will query the server.
 @bot.command(name='query')
