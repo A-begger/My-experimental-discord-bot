@@ -1,4 +1,5 @@
 # bot.py
+from email.policy import default
 import os
 import random
 from urllib import response
@@ -25,9 +26,12 @@ async def on_ready():
     # this is executed when the bot is ready to run
     print(f'{bot.user.name} has connected to Discord!')
 default_ip="inthessmokes.aternos.me" #Sets the default ip as a global variable
+
 @bot.command(name='status')
 # is a command, does this if status
-async def server_lookup(ctx,default_ip="inthessmokes.aternos.me"):
+async def server_lookup(ctx,default_ip=default_ip):
+    if ctx.guild.id == 895342111933726781: #if the command is sent from a guild
+        default_ip="Kaleria.aternos.me"    #with a specifc id then it changes the default ip
     server = MinecraftServer.lookup(default_ip)
     
     # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
