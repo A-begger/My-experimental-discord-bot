@@ -41,11 +41,13 @@ async def server_lookup(ctx,default_ip="inthessmokes.aternos.me"):
     await ctx.send(response)
 @bot.command(name='ping') #ping pong
 async def pong(ctx):
-  rand_num = random.randint(1,13756)
+  rand_num = random.randint(1,10)
   if rand_num == 1: 
-        response = "Smokes sucks"
+        response = "Smoke sucks"
   else:
-      response = "Pong!"  
+      response = "Pong!"
+  if discord.Member.id == {317153009400414209}:
+    response = "You suck"  
   await ctx.send(response)
 """ If querying is enabled then this will query the server.
 @bot.command(name='query')
