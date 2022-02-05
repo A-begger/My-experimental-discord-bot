@@ -1,5 +1,5 @@
 # bot.py
-from email.policy import default
+#from email.policy import default
 import os
 import random
 from urllib import response
